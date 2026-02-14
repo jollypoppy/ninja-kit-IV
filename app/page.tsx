@@ -47,18 +47,6 @@ const Home = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    const getAllProducts = async () => {
-      try {
-        const products = await axios.get(`${DEV_API}/product/get-all-products`);
-      } catch (error: any) {
-        console.log(error);
-        toast.error(error);
-      }
-    };
-
-    getAllProducts();
-  }, []);
 
   const submitEmail = () => {
     alert('Email submitted');
